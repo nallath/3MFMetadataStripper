@@ -2,12 +2,6 @@ import argparse
 import zipfile
 import xml.etree.ElementTree as ET
 import io
-from shutil import copyfile
-
-namespaces = {
-    "3mf": ""
-}
-
 
 namespace = "{http://schemas.microsoft.com/3dmanufacturing/core/2015/02}"
 
@@ -20,9 +14,6 @@ if __name__ == "__main__":
     parser.add_argument('dest', metavar='dest', type = str, nargs='+', help='Destination of the stripped file')
 
     args = parser.parse_args()
-
-    
-    copyfile(args.source[0], args.dest[0])
 
     new_model_data = ""
 
